@@ -1,0 +1,71 @@
+\documentclass[12pt]{cmspaper}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{lineno}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{mathtools,etoolbox}
+
+\DeclarePairedDelimiterX{\abs}[1]{\lvert}{\rvert}{\ifblank{#1}{{}\cdot{}}{#1}}
+
+\newcommand{\FIG}[1]{Fig.~\ref{#1}\xspace}
+\newcommand{\TAB}[1]{Table~\ref{#1}\xspace}
+\newcommand{\tqh}{\ensuremath{\PQt_\mathrm{h}}\xspace}
+\newcommand{\tqhard}{\ensuremath{\PQt_\mathrm{hard}}\xspace}
+\newcommand{\tqsoft}{\ensuremath{\PQt_\mathrm{soft}}\xspace}
+\newcommand{\tql}{\ensuremath{\PQt_\ell}\xspace}
+\newcommand{\Jbl}{\ensuremath{\PQb_\ell}\xspace}
+\newcommand{\Jbh}{\ensuremath{\PQb_\mathrm{h}}\xspace}
+\newcommand{\JWa}{\ensuremath{\mathrm{j}_{\PW1}}\xspace}
+\newcommand{\JWb}{\ensuremath{\mathrm{j}_{\PW2}}\xspace}
+\newcommand{\Jadda}{\ensuremath{\mathrm{j}_\mathrm{1}}\xspace}
+\newcommand{\Jaddb}{\ensuremath{\mathrm{j}_\mathrm{2}}\xspace}
+\newcommand{\Jaddc}{\ensuremath{\mathrm{j}_\mathrm{3}}\xspace}
+\newcommand{\Jaddd}{\ensuremath{\mathrm{j}_\mathrm{4}}\xspace}
+\newcommand{\pp}{\ensuremath{\Pp\Pp}\xspace}
+\newcommand{\unit}[1]{\ensuremath{\text{\,#1}}\xspace}
+
+
+\newcommand{\Mtop}{\ensuremath{m_\PQt}\xspace}
+\newcommand{\mt}{\ensuremath{m_\mathrm{T}}\xspace}
+\newcommand{\mur}{\ensuremath{\mu_\mathrm{r}}\xspace}
+\newcommand{\muf}{\ensuremath{\mu_\mathrm{f}}\xspace}
+\newcommand{\MW}{\ensuremath{m_{\PW}}\xspace}
+\newcommand{\Pmass}{\ensuremath{P_\mathrm{m}}\xspace}
+\newcommand{\W}{\ensuremath{\PW}\xspace}
+\newcommand{\lpj}{\ensuremath{\ell\text{+jets}}\xspace}
+\newcommand{\Dn}{\ensuremath{D_{\nu,\text{min}}}\xspace}
+\newcommand{\DRtopjets}{\ensuremath{\Delta R_{\mathrm{j}_\PQt}}\xspace}
+\newcommand{\DRtop}{\ensuremath{\Delta R_{\PQt}}\xspace}
+
+\newcommand{\AMCATNLO}{\textsc{mg}5\_\text{a}\textsc{mc@nlo}\xspace}
+\newcommand{\PYTHIAA}{\textsc{pythia}8\xspace}
+\newcommand{\OPENLOOPS}{\textsc{OpenLoops}\xspace}
+
+\newcommand{\ttb}{\ensuremath{\mathrm{t\bar{t}}}\xspace}
+\newcommand{\Mbl}{\ensuremath{M_\mathrm{bl}}\xspace}
+\newcommand{\yt}{\ensuremath{y_\mathrm{t}}\xspace}
+\newcommand{\DYbl}{\ensuremath{\Delta y_\mathrm{bl}}\xspace}
+\newcommand{\absDybl}{\ensuremath{|\Delta y|_\mathrm{bl}\xspace}}
+\newcommand{\ttbar}{\ensuremath{\mathrm{t\bar{t}}}\xspace}
+
+
+\begin{document}
+
+\title{Measuring the top quark Yukawa coupling using kinematics of \ttbar dilepton decays with full run 2 data}
+\abstract{We present an indirect measurement of the top-Higgs Yukawa coupling using the kinematic distributions of $\mathrm{t\bar{t}}$ decay products in the dilepton final state. This analysis follows the methods used with semi-leptonic decays from the 2016 dataset in TOP-17-004, adapting them to a new decay channel and utilizing full run 2 data.  Sensitivity to the Yukawa coupling comes from shape distortions in the kinematics of the top quark and antiquark due to the virtual exchange of a Higgs boson. The expected shape distortions are computed using electroweak diagrams as interference terms via the HATHOR package. Measurements are performed on the dimensionless Yukawa parameter $\yt$, which is the ratio of the Yukawa coupling used in generating the electro-weak corrections to the standard model Yukawa coupling value. We present a sensitivity study on the Asimov dataset, which suggests a 95\% confidence upper limit on $\yt$ of 1.56.
+}
+\clearpage
+
+\tableofcontents
+
+\input{text.tex}
+
+\clearpage
+
+\bibliographystyle{auto_generated}
+\bibliography{sources.bib}
+
+\end{document}
