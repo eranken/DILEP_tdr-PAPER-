@@ -35,136 +35,28 @@ Our aim is to take this approach, which has been successfully applied to \ttbar 
 In this note, we will discuss first our Data/MC samples (Section \ref{S:data}), followed by our methods for event selection (Section \ref{S:selection}) and reconstruction (Section \ref{S:reco}). We then present an outline of the measurement technique (Section \ref{S:stats}), followed by a detailed consideration of uncertainty sources and their treatment (Section \ref{S:sys}). We conclude with a preliminary sensitivity study done on the Asimov dataset, demonstrating the current expected sensitivity of our measurement (Section \ref{S:fit}).
 
 \clearpage
+
+
+\section{The CMS detector}
+\label{sec:detector}
+The central feature of the CMS detector is a superconducting solenoid of 6m internal diameter,
+providing a magnetic field of 3.8 T. Within the solenoid volume are a silicon pixel and strip
+tracker, a lead tungstate crystal electromagnetic calorimeter (ECAL), and a brass and scintillator
+hadron calorimeter (HCAL), each composed of a barrel and two endcap sections. Forward calorimeters
+extend the coverage provided by the barrel and endcap detectors. Muons
+are measured in gas-ionization detectors embedded in the steel flux-return yoke outside the
+solenoid. 
+
+The particle-flow (PF) algorithm~\cite{CMS-PRF-14-001} aims to reconstruct and identify each individual particle in an event, with an optimized combination of information from the various elements of the CMS detector. The energy of photons is obtained from the ECAL measurement. The energy of electrons is determined from a combination of the electron momentum at the primary interaction vertex as determined by the tracker, the energy of the corresponding ECAL cluster, and the energy sum of all bremsstrahlung photons spatially compatible with originating from the electron track. The energy of muons is obtained from the curvature of the corresponding track. The energy of charged hadrons is determined from a combination of their momentum measured in the tracker and the matching ECAL and HCAL energy deposits, corrected for zero-suppression effects and for the response function of the calorimeters to hadronic showers. Finally, the energy of neutral hadrons is obtained from the corresponding corrected ECAL and HCAL energies.A more detailed description of the CMS detector, together with a definition of the
+coordinate system and relevant kinematical variables, can be found in Ref. ~\cite{Chatrchyan:2008zzk}.
+
 \section{Data and Monte Carlo (MC) Samples}
 
-\begin{table}[tp]
-\centering
-\caption{Data streams used.}
-\label{tab:DATA}
-\begin{tabular}{| l |}\hline
-{\bf 2016} \\ 
-\tiny {\tt /SingleElectron/Run2016B-07Aug17\_ver2-v2/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2016C-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2016D-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2016E-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2016F-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2016G-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2016H-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2016B-07Aug17\_ver2-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2016C-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2016D-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2016E-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2016F-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2016G-07Aug17-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2016H-07Aug17-v1/MINIAOD} \\\hline
-{\bf \centering 2017} \\
-\tiny {\tt /SingleMuon/Run2017B-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2017C-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2017D-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2017E-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2017F-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2017B-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2017C-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2017D-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2017E-31Mar2018-v1/MINIAOD} \\
-\tiny {\tt /SingleElectron/Run2017F-31Mar2018-v1/MINIAOD} \\\hline
-{\bf 2018} \\
-\tiny {\tt /SingleMuon/Run2018A-17Sep2018-v2/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2018B-17Sep2018-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2018C-17Sep2018-v1/MINIAOD} \\
-\tiny {\tt /SingleMuon/Run2018D-22Jan2019-v2/MINIAOD} \\
-\tiny {\tt /EGamma/Run2018A-17Sep2018-v2/MINIAOD} \\
-\tiny {\tt /EGamma/Run2018B-17Sep2018-v1/MINIAOD} \\
-\tiny {\tt /EGamma/Run2018C-17Sep2018-v1/MINIAOD} \\
-\tiny {\tt /EGamma/Run2018D-22Jan2019-v2/MINIAOD} \\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{table}[]
-\begin{center}
-\begin{tabular}{ l | c | c }
-MC & $\sigma$ [pb] & weights \\\hline
-\hline\tiny DYJetsToLL\_M-50\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 6024.000 & 146135378\\
-\hline\tiny ST\_t-channel\_antitop\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TuneCUETP8M1 & 80.950 & 38811017\\
-\hline\tiny ST\_t-channel\_top\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TuneCUETP8M1 & 136.020 & 67105876\\
-\hline\tiny ST\_tW\_antitop\_5f\_NoFullyHadronicDecays\_13TeV-powheg\_TuneCUETP8M1 & 19.300 & 3256407\\
-\tiny ST\_tW\_top\_5f\_NoFullyHadronicDecays\_13TeV-powheg\_TuneCUETP8M1 &   & 3256650\\
-\hline\tiny ST\_s-channel\_4f\_leptonDecays\_13TeV-amcatnlo-pythia8\_TuneCUETP8M1 & 3.450 & 622990\\
-\hline\tiny TT\_TuneCUETP8M2T4\_13TeV-powheg-pythia8 & 832.000 & 153790053\\
-\tiny TT\_TuneCUETP8M2T4\_13TeV-powheg-fsrdown-pythia8 &   & 59174176\\
-\tiny TT\_TuneCUETP8M2T4\_13TeV-powheg-fsrup-pythia8 &   & 59133437\\
-\tiny TT\_TuneCUETP8M2T4\_13TeV-powheg-isrdown-pythia8 &   & 58420151\\
-\tiny TT\_TuneCUETP8M2T4\_mtop1715\_13TeV-powheg-pythia8 &   & 19331960\\
-\tiny TT\_TuneCUETP8M2T4\_mtop1735\_13TeV-powheg-pythia8 &   & 19420550\\
-\tiny TT\_TuneCUETP8M2T4down\_13TeV-powheg-pythia8 &   & 29997972\\
-\tiny TT\_TuneCUETP8M2T4up\_13TeV-powheg-pythia8 &   & 29498904\\
-\tiny TT\_hdampDOWN\_TuneCUETP8M2T4\_13TeV-powheg-pythia8 &   & 29229088\\
-\tiny TT\_hdampUP\_TuneCUETP8M2T4\_13TeV-powheg-pythia8 &   & 29833668\\
-\tiny TT\_TuneCUETP8M2T4\_13TeV-powheg-isrup-pythia8 &   & 156469815\\
-\end{tabular}
-\end{center}
-
-\caption{MC files used for 2016 data set.}
-    \label{tab:2016MC}
-\end{table}
-
-\begin{table}[]
-\begin{center}
-\begin{tabular}{ l | c | c }
-MC & $\sigma$ [pb] & weights \\\hline
-\hline\tiny DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 6024.000 & 142024954\\
-\hline\tiny ST\_s-channel\_4f\_leptonDecays\_TuneCP5\_PSweights\_13TeV-amcatnlo-pythia8 & 3.450 & 6179680\\
-\hline\tiny ST\_t-channel\_antitop\_4f\_inclusiveDecays\_TuneCP5\_13TeV-powhegV2-madspin-pythia8 & 80.950 & 3939941\\
-\hline\tiny ST\_t-channel\_top\_4f\_inclusiveDecays\_TuneCP5\_13TeV-powhegV2-madspin-pythia8 & 136.020 & 5865760\\
-\hline\tiny ST\_tW\_antitop\_5f\_NoFullyHadronicDecays\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 & 19.300 & 5347721\\
-\tiny ST\_tW\_top\_5f\_NoFullyHadronicDecays\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 &   & 4666798\\
-\hline\tiny TTTo2L2Nu\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 & 87.400 & 66436380\\
-\tiny TTTo2L2Nu\_TuneCP5down\_PSweights\_13TeV-powheg-pythia8 &   & 5431156\\
-\tiny TTTo2L2Nu\_TuneCP5up\_PSweights\_13TeV-powheg-pythia8 &   & 5455607\\
-\tiny TTTo2L2Nu\_hdampDOWN\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 &   & 5248352\\
-\tiny TTTo2L2Nu\_hdampUP\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 &   & 5389177\\
-\tiny TTTo2L2Nu\_mtop171p5\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 &   & 5390988\\
-\tiny TTTo2L2Nu\_mtop173p5\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 &   & 5760519\\
-\hline\tiny TTToHadronic\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 & 380.200 & 129668349\\
-\hline\tiny TTToSemiLeptonic\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 & 364.400 & 110422197\\
-\end{tabular}
-\end{center}
-\caption{MC files used for 2017 data set.}
-    \label{tab:2017MC}
-\end{table}
-
-\begin{table}[]
-\begin{center}
-\begin{tabular}{ l | c | c }
-MC & $\sigma$ [pb] & weights \\\hline
-\hline\tiny DYJetsToLL\_M-50\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 6024.000 & 100114403\\
-\hline\tiny ST\_s-channel\_4f\_leptonDecays\_TuneCP5\_13TeV-madgraph-pythia8 & 3.450 & 12447484\\
-\hline\tiny ST\_t-channel\_antitop\_4f\_InclusiveDecays\_TuneCP5\_13TeV-powheg-madspin-pythia8 & 80.950 & 74227130\\
-\hline\tiny ST\_t-channel\_top\_4f\_InclusiveDecays\_TuneCP5\_13TeV-powheg-madspin-pythia8 & 136.020 & 141235582\\
-\hline\tiny ST\_tW\_antitop\_5f\_NoFullyHadronicDecays\_TuneCP5\_13TeV-powheg-pythia8 & 19.300 & 6878049\\
-\tiny ST\_tW\_top\_5f\_NoFullyHadronicDecays\_TuneCP5\_13TeV-powheg-pythia8 &   & 8683040\\
-\hline\tiny TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 87.400 & 63791484\\
-\hline\tiny TTToHadronic\_TuneCP5\_13TeV-powheg-pythia8 & 380.200 & 132725582\\
-\hline\tiny TTToSemiLeptonic\_TuneCP5\_13TeV-powheg-pythia8 & 364.400 & 100728756\\
-\hline\tiny TTTo2L2Nu\_TuneCP5down\_13TeV-powheg-pythia8 & 87.400 & 4914480\\
-\tiny TTTo2L2Nu\_TuneCP5up\_13TeV-powheg-pythia8 &   & 5401744\\
-\tiny TTTo2L2Nu\_hdampDOWN\_TuneCP5\_13TeV-powheg-pythia8 &   & 5368300\\
-\tiny TTTo2L2Nu\_hdampUP\_TuneCP5\_13TeV-powheg-pythia8 &   & 5236080\\
-\tiny TTTo2L2Nu\_mtop171p5\_TuneCP5\_13TeV-powheg-pythia8 &   & 5848484\\
-\tiny TTTo2L2Nu\_mtop173p5\_TuneCP5\_13TeV-powheg-pythia8 &   & 5686136\\
-\end{tabular}
-\end{center}
-
-\caption{ MC files used for 2018 data set.}
-    \label{tab:2018MC}
-\end{table}
 
 
+We utilize the full CMS Run 2 dataset. Events are selected from the SingleMuon and SingleElectron/EGamma data streams. As the \ttbar dilepton channel  overall has very low background level, we rely on Monte Carlo simulation to estimate their rates and kinematic distributions. In particular, we  account for dilepton production due to Drell-Yan type processes and single top production. Backgrounds from QCD multijet production were found to be negligible and are not included. Among vector+jets backgrounds, W decay samples were also investigated and found to have negligible contributions. 
 
-We utilize the full CMS Run 2 dataset. Events are selected from the SingleMuon and SingleElectron/EGamma data streams in the MINIAOD format, shown in Table\,\ref{tab:DATA}. As the \ttbar dilepton channel  overall has very low background level  we rely on Monte Carlo simulation to estimate their rates and kinematic distributions. In particular, we  account for dilepton production due to Drell-Yan type processes and single top production. Backgrounds from QCD multijet production were found to be negligible and are not included. Among vector+jets backgrounds, W decay samples were also investigated (including WHT samples) and found to have negligible contributions. 
-
-Around 1\% of \ttbar events from lepton+jets  channel are misidentified as dilepton events.  EW corrections are applied to all \ttbar events,  even  misidentified ones. This approach also allows us to apply systematic uncertainty variations to the ttbar sample uniformly.
+Around 1\% of events identified as \ttbar dilepton are in fact misidentified \ttbar lepton+jets events.  EW corrections are applied to all \ttbar events,  even  misidentified ones. This approach also allows us to apply systematic uncertainty variations to the ttbar sample uniformly.
 
 The full list of Monte Carlo samples used by this analysis is shown in Tables \ref{tab:2016MC}--\ref{tab:2018MC}.  Expected signal and background counts, after event selection, are discussed in Section \ref{SS:bg}.
 
@@ -176,39 +68,30 @@ The full list of Monte Carlo samples used by this analysis is shown in Tables \r
 
 \subsection{Trigger}
 \label{SS:trigger}
-
-We opt to select events using single-lepton datasets, rather than using a dilepton trigger. Events are selected from the SingleMuon and SingleElectron/EGamma data streams in the MINIAOD format as shown in Table\,\ref{tab:DATA} if they pass single lepton triggers. For the muon channel we use the trigger HLT\_IsoMu24/27/24  in 2016/2017/2018 data sets respectively. Electrons are selected with HLT\_Ele27\_WPTight\_Gsf in 2016/2017 and HLT\_Ele32\_WPTight\_Gsf in 2018. To avoid a double counting of events, all events selected by the chosen muon triggers are rejected in the SingleElectron/EGamma data stream. 
+ Events are selected from the SingleMuon and SingleElectron/EGamma data streams if they pass single lepton triggers. based on availability of different $p_T$ triggers, in the muon channel we use a $p_T$ threshold of 24/27/24 GeV  in 2016/2017/2018 datasets respectively, and for electrons a $p_T$ threshold of 27/27/32 in 2016/2017/2018. To avoid a double counting of events, all events selected by the chosen muon triggers are rejected in the SingleElectron/EGamma data stream. 
 
 
 \subsection{Leptons}
 Due to the use of single-lepton triggers, we require that at least one lepton pass a leading $p_T$ selection above the online trigger threshold. We then require that an additional lepton of opposite sign passes a less stringent sub-leading $p_T$ selection. We reject events with more than 2 leptons passing the sub-leading $p_T$ selection.
 
 \subsection*{Muons}
-The pseudo-rapidity is restricted to the silicon tracker coverage of $\abs{\eta} < 2.4$. The standard cut-based tight selection provided by the muon POG is applied and isolation required. Muons are categorized as isolated if the particle-flow (PF) isolation $I_\mathrm{PF}/p_T(\mu) < 0.15$, where $I_\mathrm{PF} = I_\mathrm{CH} + \max(0, I_\mathrm{N} + I_\mathrm{PH} - 0.5 I_\mathrm{CH,pu})$ and $I_\mathrm{X}$ if the $p_T$-sum of charged (CH), neutral (N), and photon-like (PH) particle-flow candidates within $\Delta R = 0.4$ around the muon. The last term $I_\mathrm{CH,pu}$, which is the sum of charged particles not originating from the main primary vertex, is designed to compensate for contributions from pileup. 
+The pseudo-rapidity is restricted to the silicon tracker coverage of $\abs{\eta} < 2.4$. A cut-based selection is applied and isolation required. Muons are categorized as isolated if the particle-flow (PF) isolation $I_\mathrm{PF}/p_T(\mu) < 0.15$, where $I_\mathrm{PF} = I_\mathrm{CH} + \max(0, I_\mathrm{N} + I_\mathrm{PH} - 0.5 I_\mathrm{CH,pu})$ and $I_\mathrm{X}$ if the $p_T$-sum of charged (CH), neutral (N), and photon-like (PH) particle-flow candidates within $\Delta R = 0.4$ around the muon. The last term $I_\mathrm{CH,pu}$, which is the sum of charged particles not originating from the main primary vertex, is designed to compensate for contributions from pileup. 
 
 The leading muon $p_T$ is requires to be greater than $30$\,GeV. This ensures that the offline selection is well above the trigger threshold of 27\,GeV. For the sub-leading muons, we require  $p_T>15$\,GeV.
 
 Efficiencies of reconstruction, identification and the trigger have been studied and scale factors are applied to the simulation based on a tag and probe method applied to leptons originating from $Z$ boson decay. The corresponding systematic uncertainty is  described in Section \ref{S:sys}.
 
 \subsection*{Electrons}
- We restrict the pseudo-rapidity to the silicon tracker coverage of $\abs{\eta} < 2.4$. Electrons with an ECal super cluster (SC) in the gap between the barrel and the endcap, $1.442 < \eta(SC) < 1.566$, are rejected. The tight electron ID (V2) is used, which includes an isolation requirement similar to muons. In addition, a selection on the transverse impact parameter $\abs{d_\mathrm{0}} < 0.05(0.10)$\,cm and the longitudinal impact parameter $\abs{d_\mathrm{z}} < 0.1(0.2)$\,cm is applied in the barrel(endcap) regions.
+ We restrict the pseudo-rapidity to the silicon tracker coverage of $\abs{\eta} < 2.4$. Electrons with an ECal super cluster (SC) in the gap between the barrel and the endcap, $1.442 < \eta(SC) < 1.566$, are rejected. A cut-based ID is used, which includes an isolation requirement similar to muons. In addition, a selection on the transverse impact parameter $\abs{d_\mathrm{0}} < 0.05(0.10)$\,cm and the longitudinal impact parameter $\abs{d_\mathrm{z}} < 0.1(0.2)$\,cm is applied in the barrel(endcap) regions.
  
  In 2016 and 2017 datasets the trigger $p_T$ threshold for isolated electrons is 27\,GeV, although there were periods in 2017, when the trigger based on electrons with  $p_T$ below  32\,GeV was pre-scaled. For both 2016 and 2017 we choose to use an offline selection of  $p_T > 30$\,GeV, and to treat the pre-scales in 2017 as an additional inefficiency. In 2018 the  trigger threshold was raised to 32\,GeV and an offline leading $p_T$ cut of $p_T>34$\,GeV is used. In all years, the sub-leading electron requirement is only $p_T>15$\,GeV.
 
  Scale factors are generated, applied, and considered as uncertainty sources following the same methods used for muons.
 
 \subsection{Jets and b-jet identification}
-The default jets are clustered from PF objects using the anti-$k_T$ jet algorithm with a distance parameter of 0.4. Charged particles originating from a pileup interaction vertex are excluded. The following jet energy/resolution corrections are applied: 
-\begin{itemize}
-\item
-{\tt Summer16\_07Aug2017\_V11} / \allowbreak{\tt Summer16\_25nsV1} for 2016, \item
-{\tt Fall17\_17Nov2017\_V32} / \allowbreak {\tt Fall17\_V3} for 2017,  
-\item
-{\tt Autumn18\_RunX\_V19} /\; {\tt Autumn18\_Run(ABC|D)\_V7} for 2018. 
-\end{itemize}
-All jets are required to have $p_T>$30\,GeV and $\abs{\eta} < 2.4$.
+The default jets are clustered from PF objects using the anti-$k_T$ jet algorithm with a distance parameter of 0.4. Charged particles originating from a pileup interaction vertex are excluded. 
 
-The DeepCSV b-tagging algorithm is used for the identification of b jets. To identify b-jet candidates we require at least two b-jets to pass the loose working point selection criterion. Scale factors derived on data are used to correct the tagging and mistagging efficiencies. Uncertainty on these efficiencies is discussed in Section \ref{S:sys}.
+The DeepCSV b-tagging algorithm  is used for the identification of b-jets \cite{deepCSVref}. We require at least two b-jets to pass the loose working point selection criterion. Scale factors derived on data are used to correct the tagging and mistagging efficiencies. Uncertainty on these efficiencies is discussed in Section \ref{S:sys}.
 
  In events with more than two b-tagged jets, the jets are sorted by the CSV discriminant, with the two leading-CSV jets assumed to be the most likely candidates for b-jets originating from a top decay. After sorting, if the third jet has a similar CSV value to the second (difference $<0.25$), the event is discarded as it is considered unclear which b-jets to use. This is a rare enough occurrence that it is not clear whether it would be worthwhile to invest more effort in selecting 2 b-jets from 3 or more candidates. 
  
@@ -351,7 +234,7 @@ The sensitivity of our chosen kinematic variables to $\yt$, following reconstruc
     \includegraphics[width=.48\linewidth]{figs/ratDyblgen.pdf}
     \includegraphics[width=.48\linewidth]{figs/ratMblgen_rel.pdf}
     \includegraphics[width=.48\linewidth]{figs/ratDyblgen_rel.pdf}
-    \caption{Effect of the EW corrections on kinematic distributions which do not require full kinematic reconstruction of the \ttbar system. The effect is shown both relative to the NLO QCD POWHEG+P8 Monte Carlo Sample (top left \& right), and relative to the Standard Model EW corrections (bottom left \& right). The latter is a direct representation of our sensitivity in measuring the Yukawa coupling.}
+    \caption{Effect of the EW corrections on kinematic distributions which do not require full kinematic reconstruction of the \ttbar system. The effect is shown both relative to the NLO QCD POWHEG+P8 Monte Carlo Sample (top left \& right), and relative to the Standard Model EW corrections (bottom left \& right). In essence, the top plots show the effect of the EW corrections on the uncorrected sample, while the bottom plots show our sensitivity in distinguishing the effects of different Yukawa coupling values.}
     \label{fig:ratblgen}
 \end{figure}
 
@@ -866,10 +749,6 @@ The overall health of the fit appears good, with a few minor issues. A few nuisa
     
 \end{itemize}
 
-\subsection{Challenges and potential for future improvement - Do we need this??}
-Both room for improvement and reason for caution come from the EWunc modelling uncertainty. Our method for estimating this uncertainty (see Section \ref{SS:kfactor}) is at first glance more conservative than the method used in \cite{ytnote}. However, it is seen to be overconstrained, which can indicate either that it is overestimated or modelled inaccurately. The uncertainty is taken as the difference between multiplicative and additive approaches to EW corrections. Qualitatively, the multiplicative approach should work better at high $M_\ttbar$ \cite{Czakon:2017NLOEW}, which means we are likely overestimating the uncertainty in that kinematic region. However, it is unclear how one could incorporate this knowledge quantitatively into the fit.
-
-It should now be possible to generate samples at NLO QCD with EW corrections in Sherpa, or at least investigate them via Matrix Element calculators such as MCFM. To do so would eliminate the large uncertainty on the EW correction shape. This is the one significant modification the authors would like to see in the future. However, such calculations are cutting edge, often requiring private beta versions of the software. It has been difficult to get feedback from the generator authors on issues that we have had with generating such samples. Meanwhile the Sherpa 3.0 release, which should include these corrections in a more standardized and documented way, has been delayed again and again throughout 2019. Given tight time constraints on a student author graduating in April, it is unclear whether any new samples will be incorporated in this analysis. If not, they would remain as likely additions to a future lepton+jets and dilepton combination measurement.
 
 \begin{figure}
     \centering
@@ -887,7 +766,14 @@ It should now be possible to generate samples at NLO QCD with EW corrections in 
     \label{fig:scan}
 \end{figure}
 
+
+
 \clearpage
+
+
+\section{Conclusions}
+\label{S:conc}
+shit sucks
 
 \appendix
 
