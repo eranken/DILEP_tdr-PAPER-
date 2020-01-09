@@ -8,7 +8,7 @@ Current Monte Carlo (MC) simulations of \ttbar production include next-to-leadin
 \begin{figure}
     \centering
     \includegraphics[width=.85\linewidth]{figs/quarkgluon.png}
-    \caption{Sample diagrams for EW contributions to gluon-induced and quark-induced top pair production, where $\Gamma$ stands for neutral gauge bosons, Higgs boson and pseudo-Goldstone bosons. The correction due to the interference of these diagrams with the LO QCD diagrams is evaluated using HATHOR package}.
+    \caption{Sample diagrams for EW contributions to gluon-induced and quark-induced top pair production, where $\Gamma$ stands for neutral gauge bosons, Higgs boson and pseudo-Goldstone bosons. The correction due to the interference of these diagrams with the LO QCD diagrams is evaluated using HATHOR package.}
     \label{fig:diagrams}
 \end{figure}
 
@@ -16,14 +16,14 @@ Current Monte Carlo (MC) simulations of \ttbar production include next-to-leadin
     \centering
     \includegraphics[width=.48\linewidth]{figs/ratMttgen.pdf}
     \includegraphics[width=.48\linewidth]{figs/ratDyttgen.pdf}
-    \caption{Effect of the EW corrections on \ttbar differential kinematic distributions for different values of $\yt$, after reweighting of gen-level events from Powheg+Pythia8}
+    \caption{Effect of the EW corrections on \ttbar differential kinematic distributions for different values of $\yt$, after reweighting of gen-level events from Powheg+Pythia8.}
     \label{fig:hatratgen}
 \end{figure}
 
 
 
 
-Thus, the effect of EW corrections can be considered without generating new MC samples. This is achieved by applying  weight corrections to the current standard \ttbar MC samples used by the CMS TOP group. Contributions to the top quark pair production due to the interference of QCD+EW diagrams, shown in Figure \ref{fig:diagrams},  with the leading order (LO) QCD diagrams are evaluated using HATHOR (v2.1) package~\cite{hathorart}. The ratio of these contributions to the LO QCD production is applied as parton-level weight corrections to events simulated using POWHEG+PYTHIA8, which incorporates fully NLO QCD calculations and parton shower effects \cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd,Campbell:2014kua,Sjostrand:2006za,Sjostrand:2007gs} \cite{Frederix:2012ps}. In HATHOR, we can control the ratio of the Yukawa coupling used in computing the Electroweak corrections to the standard model value, 
+Thus, the effect of EW corrections can be considered without generating new MC samples. This is achieved by applying  weight corrections to the current standard \ttbar MC samples used for top physics analysis by the CMS experiment. Contributions to the top quark pair production due to the interference of QCD+EW diagrams, shown in Figure \ref{fig:diagrams},  with the leading order (LO) QCD diagrams are evaluated using HATHOR (v2.1) package~\cite{hathorart}. The ratio of these contributions to the LO QCD production is applied as parton-level weight corrections to events simulated using POWHEG+PYTHIA8, which incorporates fully NLO QCD calculations and parton shower effects \cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd,Campbell:2014kua,Sjostrand:2006za,Sjostrand:2007gs} \cite{Frederix:2012ps}. In HATHOR, we can control the ratio of the Yukawa coupling used in computing the Electroweak corrections to the standard model value, 
 \begin{equation}
 \yt = g_\mathrm{t}\mathrm{(HATHOR)}/g_\mathrm{t}\mathrm{(SM).} 
 \end{equation}
@@ -33,7 +33,7 @@ Weights are calculated for discrete integer values of $\yt=0,1,\ldots,5.$ After 
 Our aim is to take this approach, which has been successfully applied to \ttbar decays in the lepton+jets channel \cite{ytpaper}, and apply it to the dilepton channel. While this channel has a smaller branching ratio, it has much lower backgrounds due to the distinguishing presence of two final state leptons. However, it also contains two final state neutrinos, presenting the question of whether it is necessary to perform a full kinematic reconstruction with two missing final state particles. 
 
 In this note, we will discuss first our Data/MC samples (Section \ref{S:data}), followed by our methods for event selection (Section \ref{S:selection}) and reconstruction (Section \ref{S:reco}). We then present an outline of the measurement technique (Section \ref{S:stats}), and conclude with a preliminary sensitivity study done on the Asimov dataset, demonstrating the current expected sensitivity of our measurement (Section \ref{S:fit}). 
-Uncertainty sources are described in detail in Appendix \ref{S:uncs}
+Uncertainty sources are described in detail in Appendix \ref{S:uncs}.
 
 \clearpage
 
@@ -55,9 +55,9 @@ coordinate system and relevant kinematical variables, can be found in Ref. ~\cit
 
 
 
-We utilize the full CMS Run 2 dataset.. As the \ttbar dilepton channel  overall has very low background level, we rely on Monte Carlo simulation to estimate their rates and kinematic distributions. In particular, we  account for dilepton production due to Drell-Yan type processes and single top production. Backgrounds from QCD multijet production were found to be negligible and are not included. Among vector+jets backgrounds, W decay samples were also investigated and found to have negligible contributions. 
+We utilize the full CMS Run 2 dataset. As the \ttbar dilepton channel  overall has very low background level, we rely on Monte Carlo simulation to estimate their rates and kinematic distributions. In particular, we  account for dilepton production due to Drell-Yan type processes and single top production. Backgrounds from QCD multijet production were found to be negligible and are not included. Among vector+jets backgrounds, W decay samples were also investigated and found to have negligible contributions. 
 
-Around 1\% of events identified as \ttbar dilepton are in fact misidentified \ttbar lepton+jets events.  EW corrections are applied to all \ttbar events,  even  misidentified ones. This approach also allows us to apply systematic uncertainty variations to the ttbar sample uniformly.
+Around 1\% of events identified as \ttbar dilepton are in fact misidentified \ttbar lepton+jets events.  EW corrections are applied to all \ttbar events,  even  misidentified ones. This approach also allows us to apply systematic uncertainty variations to the \ttbar sample uniformly.
 
 Single top events are simulated with Powheg+Phythia8, while Drell-Yan decays are simulated using the MadGraph5 generator \cite{Alwall:2014hca}. Expected signal and background counts, after event selection, are discussed in Section \ref{SS:bg}.
 
@@ -76,12 +76,12 @@ Single top events are simulated with Powheg+Phythia8, while Drell-Yan decays are
 Due to the use of single-lepton triggers, we require that at least one lepton pass a leading $p_T$ selection above the online trigger threshold. We then require that an additional lepton of opposite sign passes a less stringent sub-leading $p_T$ selection. We reject events with more than 2 leptons passing the sub-leading $p_T$ selection.
 
 \subsection*{Muons}
-The pseudo-rapidity is restricted to the silicon tracker coverage of $\abs{\eta} < 2.4$. A cut-based muon selection is used for identification, with isolation required. The leading muon $p_T$ is requires to be greater than $30$\,GeV. This ensures that the offline selection is well above the trigger threshold of 27\,GeV. For the sub-leading muons, we require  $p_T>15$\,GeV.
+The pseudo-rapidity of the selected muons is restricted to the silicon tracker coverage of $\abs{\eta} < 2.4$. A cut-based muon selection is used for identification, with isolation required. The leading muon $p_T$ is requires to be greater than $30$\,GeV. This ensures that the offline selection is well above the trigger threshold of 27\,GeV. For the sub-leading muons, we require  $p_T>15$\,GeV.
 
-Efficiencies of reconstruction, identification and the trigger have been studied and scale factors are applied to the simulation based on a tag and probe method applied to leptons originating from $Z$ boson decay. The corresponding systematic uncertainty is  described in Section \ref{S:otherunc}.
+Efficiencies of reconstruction, identification and the trigger have been studied and scale factors are applied to the simulation based on a tag and probe method applied to leptons originating from $Z$ boson decay. The corresponding systematic uncertainty is  described in Appendix \ref{S:otherunc}.
 
 \subsection*{Electrons}
- We restrict the pseudo-rapidity to the silicon tracker coverage of $\abs{\eta} < 2.4$. Electrons with an ECal super cluster (SC) in the gap between the barrel and the endcap, $1.442 < \eta(SC) < 1.566$, are rejected. A cut-based ID is used, which includes an isolation requirement similar to muons. In addition, a selection on the transverse impact parameter $\abs{d_\mathrm{0}} < 0.05(0.10)$\,cm and the longitudinal impact parameter $\abs{d_\mathrm{z}} < 0.1(0.2)$\,cm is applied in the barrel(endcap) regions.
+ We restrict the pseudo-rapidity of the selected electrons to the silicon tracker coverage of $\abs{\eta} < 2.4$. Electrons with an ECal super cluster (SC) in the gap between the barrel and the endcap, $1.442 < \eta(SC) < 1.566$, are rejected. A cut-based ID is used, which includes an isolation requirement similar to muons. In addition, a selection on the transverse impact parameter $\abs{d_\mathrm{0}} < 0.05(0.10)$\,cm and the longitudinal impact parameter $\abs{d_\mathrm{z}} < 0.1(0.2)$\,cm is applied in the barrel(endcap) regions.
  
  In 2016 and 2017 datasets the trigger $p_T$ threshold for isolated electrons is 27\,GeV, although there were periods in 2017, when the trigger based on electrons with  $p_T$ below  32\,GeV was pre-scaled. For both 2016 and 2017 we choose to use an offline selection of  $p_T > 30$\,GeV, and to treat the pre-scales in 2017 as an additional inefficiency. In 2018 the  trigger threshold was raised to 32\,GeV and an offline leading $p_T$ cut of $p_T>34$\,GeV is used. In all years, the sub-leading electron requirement is only $p_T>15$\,GeV.
 
@@ -90,7 +90,7 @@ Efficiencies of reconstruction, identification and the trigger have been studied
 \subsection{Jets and b-jet identification}
 The default jets are clustered from PF objects using the anti-$k_T$ jet algorithm with a distance parameter of 0.4. Charged particles originating from a pileup interaction vertex are excluded. 
 
-The DeepCSV b-tagging algorithm  is used for the identification of b-jets \cite{deepCSVref}. We require at least two b-jets to pass the loose working point selection criterion. Scale factors derived on data are used to correct the tagging and mistagging efficiencies. Uncertainty on these efficiencies is discussed in Section \ref{S:otherunc}.
+The DeepCSV b-tagging algorithm  is used for the identification of b-jets \cite{deepCSVref}. We require at least two b-jets to pass the loose working point selection criterion. Scale factors derived on data are used to correct the tagging and mistagging efficiencies. Uncertainty on these efficiencies is discussed in Appendix \ref{S:otherunc}.
 
  In events with more than two b-tagged jets, the jets are sorted by the CSV discriminant, with the two leading-CSV jets assumed to be the most likely candidates for b-jets originating from a top decay. After sorting, if the third jet has a similar CSV value to the second (difference $<0.25$), the event is discarded as it is considered unclear which b-jets to use. This is a rare enough occurrence that it is not clear whether it would be worthwhile to invest more effort in selecting 2 b-jets from 3 or more candidates. 
  
@@ -108,7 +108,7 @@ Additionally, we apply selection based on a missing transverse momentum, MET, of
 \par \noindent
 \textbf{Pileup }
 
-Pileup reweighting is applied to adjust the number of interactions generated in the Monte Carlo to match the data. A corresponding uncertainty is included as described in Section \ref{S:otherunc}.
+Pileup reweighting is applied to adjust the number of interactions generated in the Monte Carlo to match the data. A corresponding uncertainty is included as described in Appendix \ref{S:otherunc}.
 
 
 
@@ -222,7 +222,9 @@ In the end, the correct $b$-jet pairing is selected for approximately 82\% of ev
 
 \subsection{Sensitivity after reconstruction}
 \label{SS:reso}
-The sensitivity of our chosen kinematic variables to $\yt$, following reconstruction, is shown in Figure \ref{fig:ratblrec}. The effect of $\yt$ remains substantial enough, and unique enough in shape, that a measurement can be extracted.
+
+
+The sensitivity of our chosen kinematic variables to $\yt$, before and after reconstruction, is shown in Figures \ref{fig:ratblgen} and \ref{fig:ratblrec}. The effect of $\yt$ remains substantial enough, and unique enough in shape, that a measurement can be extracted.
 
 \begin{figure}
     \centering
@@ -244,9 +246,9 @@ The sensitivity of our chosen kinematic variables to $\yt$, following reconstruc
 
 
 
-\subsection{Comparison of distributions from data to \& Monte Carlo prediction}
+\subsection{Comparison of data and Monte Carlo prediction}
 \label{SS:control}
-The comparison between data and Monte Carlo is shown in Figures \ref{fig:dmcpre_16}-\ref{fig:dmcpost_18}. The agreement is generally seen to be well within known uncertainty. We do see some slopes in the ratio of data to MC prediction in the distributions of lepton and $b$-jet $p_T$, to varying extent for each year. These are most likely related to a well know disagreement in top quark $p_T$ distribution. 
+The comparison between data and Monte Carlo is shown in Figures \ref{fig:dmcpre_16}-\ref{fig:dmcpost_18}. The agreement is generally seen to be well within known uncertainty. We do see some slopes in the ratio of data to MC prediction in the distributions of lepton and $b$-jet $p_T$, to varying extent for each year. These are most likely related to a well known disagreement in top quark $p_T$ distribution. 
 
 It is worth noting that the uncertainty displayed in Figures \ref{fig:dmcpre_16}-\ref{fig:dmcpost_18} can be a bit misleading. Firstly, our parameter of interest is sensitive mainly to shape uncertainties and not to normalization uncertainties. We also include here the uncertainty of the scale variations, which effect the normalization by $\approx 10\%$. However, the $\ttbar$ sample is normalized to the NNLO cross section value, which should better constrain the total cross section normalization, if not the shape. This is accounted for later in the measurement itself, but not reflected in the control plots. 
 
@@ -336,7 +338,7 @@ In practice, contributions due to terms with $m<2$ or $n>2$ are small, and as su
     \Sigma_\mathrm{extra\; EW} &=& \alpha_s ^3 \alpha \Sigma_{3,1}
 \end{eqnarray}
 
-In using the Hathor package to compute the differential cross section, as a function of \yt, we include the terms
+In using the \textsc{HATHOR} package to compute the differential cross section, as a function of \yt, we include the terms
 
 \begin{equation}
     \Sigma_\textsc{HATHOR}(\yt) = \Sigma_\mathrm{LO\; QCD} + \Sigma_\mathrm{NLO\; EW}(\yt).
@@ -392,7 +394,7 @@ The implementation of this uncertainty is detailed in Section \ref{SS:statmeth}.
 
 \subsection{Implementation of EW corrections}
 
-Events are reweighted with the additional weight factor of $w_\mathrm{EW}(\yt)$ to account for the effects of 1-loop EW corrections which enter at $\mathcal{O}(\alpha_\mathrm{S}^2\alpha)$. We use the HATHOR package to generate the weights $w_\mathrm{EW}$ as a 2-dimensional function of $M_{\ttb}$ and $\Delta y $. These weight correction is generated and applied to partons at generator level in our \ttbar MC samples for a set of discrete values $\yt=0,1,...,5$. Reconstruction is carried out and the resulting double-differential distribution of events in $M_{\mathrm{bl}}$ and $\Delta y_{\mathrm{bl}}$ is stored for each $\yt$ value.
+Events are reweighted with the additional weight factor of $w_\mathrm{EW}(\yt)$ to account for the effects of 1-loop EW corrections which enter at $\mathcal{O}(\alpha_\mathrm{S}^2\alpha)$. We use the HATHOR package to generate the weights $w_\mathrm{EW}$ as a 2-dimensional function of $M_{\ttb}$ and $\Delta y $. This weight correction is generated and applied to partons at generator level in our \ttbar MC samples for a set of discrete values $\yt=0,1,...,5$. Reconstruction is carried out and the resulting double-differential distribution of events in $M_{\mathrm{bl}}$ and $\Delta y_{\mathrm{bl}}$ is stored for each $\yt$ value.
 
 \begin{figure}
     \centering
@@ -430,7 +432,7 @@ Here $n^\mathrm{bin}_\mathrm{obs}$ is the total observed bin count, with the exp
     \label{fig:quad}
 \end{figure}
 %The parameter $\phi$ is separated  from the other parameters due to its special interaction with the EW corrections from which the measurement is derived.
-Each of the other nuisance parameters, $\{\theta_i\}$, that affect the expected counts in each bin, is described by a gaussian probability distribution function of $p(\theta_i)$ that describes the likelihood of the deviation of $\theta_i$ from its expected value.  The correlations between nuisance parameters are discussed in Section~\ref{SS:corr}. 
+Each of the other nuisance parameters, $\{\theta_i\}$, that affect the expected counts in each bin, is described by a gaussian probability distribution function of $p(\theta_i)$ that describes the likelihood of the deviation of $\theta_i$ from its expected value.  The correlations between nuisance parameters are discussed in Appendix~\ref{SS:corr}. 
 
 We include an estimate of the uncertainty on the multiplicative application of EW corrections derived at order $\mathcal{O}(\alpha_\mathrm{S}^2\alpha)$, as discussed in Section \ref{SS:kfactor}. The full expression for the rate $R_\mathrm{EW}^\mathrm{bin}$, including this uncertainty term, is
 \begin{equation}
@@ -457,7 +459,7 @@ We note that the uncertainty on the EW corrections is unique because it depends 
 \section{Dominant uncertainty sources}
 \label{S:mainuncs}
 
-We list here the main limiting systematic uncertainties for this measurement. Many additional uncertainties with minor effects are also included in the fit, which are described in Appendix \ref{S:otherunc}
+We list here the main limiting systematic uncertainties for this measurement. Many additional uncertainties with minor effects are also included in the fit, which are described in Appendix \ref{S:otherunc}.
 
 \subsection{Experimental uncertainty sources}
 
@@ -470,7 +472,7 @@ Corrections are applied to Jet Energy Scale (JES) to account for a variety of ef
 \par \noindent
 \textbf{Jet Energy Resolution (JERup, JERdown)}
 
-The Jet Energy Resolution (JER) is observed to be worse in data than in Monte Carlo. To account for this, a smearing is applied. The uncertainty on this procedure is modeled by shifting the desired final resolution (as a function of $\eta$ and $p_T$) by $\pm 1\sigma$ as supplied by the experiment's jet experts.
+The Jet Energy Resolution (JER) is observed to be worse in data than in Monte Carlo. To account for this, a smearing is applied. The uncertainty on this procedure is modeled by shifting the desired final resolution (as a function of $\eta$ and $p_T$) by $\pm 1\sigma$.
 As a conservative implementation, the JER is varied up and down to form two separate uncertainty templates, which are then symmetrized separately.
 
 \subsection{Theoretical uncertainty sources}
@@ -522,7 +524,7 @@ The backgrounds in this analysis are small enough ($\approx$2\% sample compositi
 
 In this analysis, the POI, $\yt$, manifests itself as a smooth shape distortion of the kinematic distributions as seen in Figure \ref{fig:yuktemplate}. This behavior lessens the effect of normalization systematics, but also means we must take extra care in handling the shape systematics. Many sources of systematics are described by templates with significant bin-to-bin variations (see Appendix \ref{SS:templates}). While these variations can be genuine, more frequently they are due to fluctuations in the dedicated Monte Carlo samples with low statistics or other issues involving a lack of available information. These systematic uncertainties will typically be over-constrained by the likelihood fit while having little impact on the POI. As a result their potential impact on the POI could be  vastly underestimated. We thus attempt to smooth out fluctuations in our systematic templates which allow a better estimate of their potential effects on the measurement by assuming that they arise from some smooth distribution like the POI.
 
-Systematic templates are also symmetrized, and partial correlations are enforced on nuisance parameters between different years based on our knowledge of the underlying uncertainty sources. Details of these procedures can be found in Appendix \ref{S:uncdetails}
+Systematic templates are also symmetrized, and partial correlations are enforced on nuisance parameters between different years based on our knowledge of the underlying uncertainty sources. Details of these procedures can be found in Appendix \ref{S:uncdetails}.
 
 
 
@@ -534,14 +536,14 @@ Systematic templates are also symmetrized, and partial correlations are enforced
 \label{S:fit}
 To study the expected sensitivity of our measurement of $\yt$, we perform a maximum likelihood fit using the Asimov dataset with $\yt=1$. The fit results in a 60\% CI of [.58,1.31], and a 95\% CI of [0,1.56]. The impacts of the leading nuisances are shown in Figure~\ref{fig:impacts}, while a scan of the negative log likelihood as a function of $\yt$ is shown in Figure~\ref{fig:scan} (left). The result is comparable to the measurement obtained in \cite{ytpaper}, and the fit seems well-behaved.
 
-This section will be modified to include results on data after unblinding
+This section will be modified to include results on data after unblinding.
 
 
 
 \begin{figure}
     \centering
     \includegraphics[width=.98\linewidth]{figs/impacts1.pdf}
-    \caption{Impacts of systematics on the best fit value for $\yt$ using the Asimov data set. Only the leading 34 systematics are shown}
+    \caption{Impacts of systematics on the best fit value for $\yt$ using the Asimov data set. Only the leading 34 systematics are shown.}
     \label{fig:impacts}
 \end{figure}
 
@@ -562,7 +564,7 @@ This section will be modified to include results on data after unblinding
 \section{Summary}
 \label{S:conc}
 
-A measurement is presented of the Top-Higgs Yukawa coupling is presented, based on data from proton-proton collisions at the CMS experiment. Data at center of mass energy $\sqrt{s}=13$\,TeV is used from the full LHC run 2, collected from 2016-2018, yielding an integrated luminosity of 136.3 fb$^{-1}$. This measurement in essence uses the effects of virtual Higgs exchange on \ttbar decays to extract information about the coupling from kinematic distributions. Though the sensitivity is lower compared to the direct limit in \cite{ttH}, it avoids a direct dependence on other Yukawa coupling values through additional decays. Perhaps a more analogous measurement of the Top Yukawa is the limit on the four-top cross section, which places 95\% CI upper limit of \yt < 2.1 \cite{fourtop}.
+A measurement is presented of the Top-Higgs Yukawa coupling is presented, based on data from proton-proton collisions at the CMS experiment. Data at center of mass energy $\sqrt{s}=13$\,TeV is used from the full LHC run 2, collected from 2016-2018, yielding an integrated luminosity of 136.3 fb$^{-1}$. This measurement uses the effects of virtual Higgs exchange on \ttbar decays to extract information about the coupling from kinematic distributions. Though the sensitivity is lower compared to the direct limit in \cite{ttH}, it avoids a direct dependence on other Yukawa coupling values through additional decays. Perhaps a more analogous measurement of the Top Yukawa is the limit on the four-top cross section, which places 95\% CI upper limit of \yt$ < 2.1$ \cite{fourtop}.
 
 Based on the sensitivity study, we expect this measurement to have comparable sensitivity to the lepton+jets channel measurement in \cite{ytpaper}. This section will be updated when the fit is unblinded.
 
